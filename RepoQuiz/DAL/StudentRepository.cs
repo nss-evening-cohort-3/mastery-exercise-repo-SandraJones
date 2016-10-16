@@ -13,6 +13,7 @@ namespace RepoQuiz.DAL
         private Student student_;
         private int studentID;
         private Student major;
+        public object removed_student;
 
         public StudentContext Context { get; set; }
         public string first_name { get; private set; }
@@ -33,17 +34,6 @@ namespace RepoQuiz.DAL
         {
             return Context.Students.ToList();
         }
-        //public void AddStudent(StudentContext student_)
-        //{
-        //   // Student student_ = new Student { FirstName = first_name, LastName = last_name, StudentID = studentID, Major = _major };
-        //    Context.Students.Add(this.student_);
-        //    Context.SaveChanges();
-        //}
-        //public void AddStudent(string FirstName, string LastName)
-        //{         
-        //    Context.Students.Add(student_);
-        //    Context.SaveChanges();
-        //}
 
         public Student FindStudentByStudentID(int studentID)
         {
@@ -51,30 +41,16 @@ namespace RepoQuiz.DAL
             return found_student;
         }
 
-        //public void AddStudent(Student my_student)
-        //{
-        //    Context.Students.Add(my_student);
-        //    Context.SaveChanges();
-        //}
-
-
-        //public void AddStudent(StudentContext student_)
-        //{
-        //    // Student student_ = new Student { FirstName = first_name, LastName = last_name, StudentID = studentID, Major = _major };
-        //    Context.Students.Add(this.student_);
-        //    Context.SaveChanges();
-        //}
-
-        public void RemoveStudent(StudentContext major)
+        public void AddStudent(Student my_student)
+        {
+            Context.Students.Add(my_student);
+            Context.SaveChanges();
+        }
+        public void RemoveStudent(string major)
         {
 
             Context.Students.Remove(this.major);
             Context.SaveChanges();
         }
-
-        //public void AddStudent1(string v1, string v2, int v3, string v4)
-        //{
-        //    Context.Students.Add(FirstName = first_name, LastName = last_name, StudentID = studentID, Major = _major);
-        //}
     }
 }

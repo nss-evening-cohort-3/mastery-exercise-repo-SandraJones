@@ -1,14 +1,23 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
+using System.Xml.Linq;
 
 namespace RepoQuiz.DAL
 {
+    
     public class NameGenerator
     {
-        // This class should be used to generate random names and Majors for Students.
-        // This is NOT your Repository
-        // All methods should be Unit Tested :)
+                
+        public static string RandomStr()
+
+        {
+            string randomString = Path.GetRandomFileName();
+            randomString = randomString.Replace(".", ""); // For Removing the .
+            return randomString;
+        }
     }
 }
