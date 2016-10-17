@@ -8,15 +8,9 @@ namespace RepoQuiz.DAL
 {
     public class StudentRepository
     {
-        private string last_name;
-        private string _major;
-        private Student student_;
-        private int studentID;
-        private Student major;
         public object removed_student;
 
         public StudentContext Context { get; set; }
-        public string first_name { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string Major { get; private set; }
@@ -46,11 +40,21 @@ namespace RepoQuiz.DAL
             Context.Students.Add(my_student);
             Context.SaveChanges();
         }
-        public void RemoveStudent(string major)
+        public Student FindStudentByMajor(string major)
         {
+            Student found_student = Context.Students.FirstOrDefault(a => a.Major.ToLower() == major.ToLower());
+            return found_student;
+        }
 
-            Context.Students.Remove(this.major);
-            Context.SaveChanges();
+        public Student RemoveStudent(string major)
+        {
+            Student found_student = FindStudentByMajor(major);
+            if (found_student != null)
+            {
+                Context.Students.Remove(found_student);
+                Context.SaveChanges();
+            }
+            return found_student;
         }
     }
 }

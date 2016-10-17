@@ -114,9 +114,8 @@ namespace RepoQuiz.Tests.DAL
             int actual_student_id = actual_student.StudentID;
             Assert.AreEqual(expected_student_id, actual_student_id);
         }
-
         [TestMethod]
-        public void RepoEnsureICanRemoveStudent()
+        public void RepoEnsureICanRemoveStudentByMajor()
         {
             // Arrange
             student_list.Add(new Student { StudentID = 2, FirstName = "Jean", LastName = "Franks", Major = "Latin" });
@@ -125,7 +124,7 @@ namespace RepoQuiz.Tests.DAL
 
             // Act
             string major = "Latin";
-         //   Student removed_student =  repo.RemoveStudent.Where(major == "Latin"); 
+            Student removed_student =  repo.RemoveStudent(major); 
             int expected_student_count = 2;
             int actual_student_count = repo.GetStudents().Count;
             
