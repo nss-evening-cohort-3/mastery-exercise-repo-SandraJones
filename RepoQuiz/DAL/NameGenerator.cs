@@ -16,7 +16,7 @@ namespace RepoQuiz.DAL
 
         {
             string randomString = Path.GetRandomFileName();
-            randomString = randomString.Replace(".", ""); // For Removing the .
+            randomString = randomString.Replace(".", ""); 
             return randomString;
         }
     }
