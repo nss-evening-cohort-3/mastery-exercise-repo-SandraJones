@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "All Students";
+}
+
+<div class="jumbotron">
+    <h1>OUR STUDENTS</h1>
+    <p class="lead">Students and More!</p>
+<div class="row">
+    <div class="col-md-6">
+        <h3>All Students</h3>
+        <ul class="list-group">
+            @{foreach (var student in ViewBag.Students)
+                {
+                    <li class="list-group-item">
+                        Name:
+                        <a href="/Student/Details/@student.StudentID"> StudentID: @student.StudentID, FirstName: @student.FirstName, LastName: @student.LastName, Major: @student.Major </a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+

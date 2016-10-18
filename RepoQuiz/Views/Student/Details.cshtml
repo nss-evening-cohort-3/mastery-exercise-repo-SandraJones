@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Specific Student";
+}
+
+<h2>Specific Student</h2>
+
+<div class="jumbotron">
+    <h1>REPOQUIZ</h1>
+    <p class="lead">Students and More!</p>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Specific Student</h3>
+
+        @{if (@ViewBag.ValidStudent == true)
+            {
+                <ul class="list-group">
+                    <li class="list-group-item">FirstName: @ViewBag.SpecificStudent.FirstName</li>
+                    <li class="list-group-item">LastName: @ViewBag.SpecificStudent.LastName</li>
+                    <li class="list-group-item">StudentID: @ViewBag.SpecificStudent.StudentID</li>
+                    <li class="list-group-item">Major: @ViewBag.SpecificStudent.Major</li>
+                </ul>
+                <p><a href="/Student/Index" class="btn btn-primary btn-lg">Full Student List</a></p>
+            }
+            else
+            {
+                <h2>Invalid Student</h2>
+            }
+        }
+    </div>
+</div>
