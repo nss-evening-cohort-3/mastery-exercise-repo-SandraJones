@@ -12,12 +12,6 @@ namespace RepoQuiz.DAL
     public class NameGenerator
     {
                 
-        public static string RandomStr()
-
-        {
-            string randomString = Path.GetRandomFileName();
-            randomString = randomString.Replace(".", ""); 
-            return randomString;
-        }
+       
     }
 }

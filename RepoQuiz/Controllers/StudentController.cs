@@ -10,24 +10,23 @@ namespace RepoQuiz.Controllers
 {
     public class StudentController : Controller
     {
+        private StudentRepository repo = new StudentRepository();
         // GET: Student
         public ActionResult Index()
         {
-            StudentRepository repo = new StudentRepository();
-            ViewBag.Student = repo.GetStudents();
+            ViewBag.Students = repo.GetStudents();
             return View();
         }
 
-        // GET: Student/Details/
+        // GET: Student/Details/{id}
         public ActionResult Details(int id)
         {
-            StudentRepository repo = new StudentRepository();
             int StudentsCount = repo.GetStudents().Count;
 
             if (id > 0 && id <= StudentsCount)
             {
                 ViewBag.ValidStudent = true;
-                ViewBag.SpecificStudent = repo.FindStudentByStudentID(int Student);
+                ViewBag.SpecificStudent = repo.FindStudentByStudentID(id);
                 return View();
             }
             else
