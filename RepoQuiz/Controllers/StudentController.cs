@@ -20,6 +20,11 @@ namespace RepoQuiz.Controllers
             ViewBag.Students = repo.GetStudents();
             return View();
         }
+        public ActionResult Student()
+        {
+            int j = 0;
+            return View();
+        }
 
         // GET: Student/Details/{id}
         public ActionResult Details(int id)
@@ -36,8 +41,8 @@ namespace RepoQuiz.Controllers
             {
                 ViewBag.ValidStudent = false;
                     return View();
-                }
-                return View();
             }
-        }       
+               // return View();
+            }
+      }       
 }

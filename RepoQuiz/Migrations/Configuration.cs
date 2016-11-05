@@ -11,7 +11,7 @@ namespace RepoQuiz.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<RepoQuiz.DAL.StudentContext>
     {
-        private Student student;
+        Student student = new Student();
 
         public Configuration()
         {
@@ -42,81 +42,81 @@ namespace RepoQuiz.Migrations
                 //set StudentID to the dynamically created id.
             }
 
-        //    context.Students.AddOrUpdate(
-        //Students
-        //    new Student
-        //    {
-        //        FirstName = "Susan",
-        //        LastName = "Tacken",
-        //        StudentID = 1,
-        //        Major = "Music"
-        //    },
+           context.Students.AddOrUpdate(
+          
+           new Student
+            {
+              FirstName = "Susan",
+              LastName = "Tacken",
+              StudentID = 1,
+              Major = "Music"
+           },
 
-        //    new Student
-        //    {
-        //        FirstName = "Hannah",
-        //        LastName = "Longfellow",
-        //        StudentID = 2,
-        //        Major = "Music"
-        //    },
-        //    new Student
-        //    {
-        //        FirstName = "Susan",
-        //        LastName = "Tacken",
-        //        StudentID = 3,
-        //        Major = "Music"
-        //    },
-        //    new Student
-        //    {
-        //        FirstName = "Mike",
-        //        LastName = "Jackson",
-        //        StudentID = 4,
-        //        Major = "Math"
-        //    },
-        //    new Student
-        //    {
-        //        FirstName = "Angie",
-        //        LastName = "Capps",
-        //        StudentID = 5,
-        //        Major = "Physics"
-        //    },
-        //    new Student
-        //    {
-        //        FirstName = "Kim",
-        //        LastName = "Manor",
-        //        StudentID = 6,
-        //        Major = "Chemistry"
-        //    },
-        //    new Student
-        //    {
-        //        FirstName = "Kate",
-        //        LastName = "Brewer",
-        //        StudentID = 7,
-        //        Major = "Physics"
-        //    },
-        //    new Student
-        //    {
-        //        FirstName = "John",
-        //        LastName = "David",
-        //        StudentID = 8,
-        //        Major = "Art"
-        //    },
-        //    new Student
-        //    {
-        //        FirstName = "Matt",
-        //        LastName = "Cooper",
-        //        StudentID = 9,
-        //        Major = "Math"
-        //    },
-        //    new Student
-        //    {
-        //        FirstName = "Ken",
-        //        LastName = "Brown",
-        //        StudentID = 10,
-        //        Major = "Music"
-        //    }
-        //);
-        //  FIZ THIS  context.SaveChanges();
+            new Student
+            {
+               FirstName = "Hannah",
+               LastName = "Longfellow",
+               StudentID = 2,
+               Major = "Music"
+            },
+            new Student
+            {
+              FirstName = "Susan",
+              LastName = "Tacken",
+              StudentID = 3,
+              Major = "Music"
+           },
+           new Student
+           {
+               FirstName = "Mike",
+               LastName = "Jackson",
+               StudentID = 4,
+               Major = "Math"
+           },
+           new Student
+           {
+               FirstName = "Angie",
+               LastName = "Capps",
+               StudentID = 5,
+               Major = "Physics"
+           },
+           new Student
+           {
+              FirstName = "Kim",
+              LastName = "Manor",
+              StudentID = 6,
+              Major = "Chemistry"
+           },
+           new Student
+          {
+              FirstName = "Kate",
+              LastName = "Brewer",
+              StudentID = 7,
+              Major = "Physics"
+          },
+          new Student
+          {
+             FirstName = "John",
+             LastName = "David",
+             StudentID = 8,
+             Major = "Art"
+          },
+          new Student
+          {
+             FirstName = "Matt",
+             LastName = "Cooper",
+             StudentID = 9,
+             Major = "Math"
+          },
+           new Student
+           {
+              FirstName = "Ken",
+              LastName = "Brown",
+              StudentID = 10,
+              Major = "Music"
+            }
+        );
+        context.SaveChanges();
         }
     }
 }
