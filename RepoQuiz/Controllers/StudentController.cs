@@ -10,6 +10,9 @@ namespace RepoQuiz.Controllers
 {
     public class StudentController : Controller
     {
+        //Generate random student:
+        NameGenerator newGenerator = new NameGenerator();
+
         private StudentRepository repo = new StudentRepository();
         // GET: Student
         public ActionResult Index()
@@ -32,11 +35,9 @@ namespace RepoQuiz.Controllers
             else
             {
                 ViewBag.ValidStudent = false;
+                    return View();
+                }
                 return View();
             }
-            return View();
-        }
-
-    }
-        
+        }       
 }
