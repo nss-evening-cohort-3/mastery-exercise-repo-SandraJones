@@ -35,7 +35,7 @@ namespace RepoQuiz.DAL
                 LastName = randomLastName,
                 Major = randomMajors
             };
-            return newRandom;
+            return newRandom;//this returns a student type so when I use this in another class, it's a student being returned not a newRandom.
         }
 
     }

@@ -32,91 +32,37 @@ namespace RepoQuiz.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
+            //instantiate the NameGenerator
             NameGenerator newStudentGenerator = new NameGenerator();
-            int StudentID = 0;
-            List<Student> seedList = new List<Student>(); 
-            while (StudentID <= 10)
-            {
-                newStudentGenerator.GenerateStudent();
-                seedList.Add(student);
-                //set StudentID to the dynamically created id.
-            }
 
-           context.Students.AddOrUpdate(
-          
-           new Student
-            {
-              FirstName = "Susan",
-              LastName = "Tacken",
-              StudentID = 1,
-              Major = "Music"
-           },
+            //create a list of new students to add to db
+            List<Student> newListOfStudents = new List<Student>();
+                        
+            var student1 = newStudentGenerator.GenerateStudent();
+            var student2 = newStudentGenerator.GenerateStudent();
+            var student3 = newStudentGenerator.GenerateStudent();
+            var student4 = newStudentGenerator.GenerateStudent();
+            var student5 = newStudentGenerator.GenerateStudent();
+            var student6 = newStudentGenerator.GenerateStudent();
+            var student7 = newStudentGenerator.GenerateStudent();
+            var student8 = newStudentGenerator.GenerateStudent();
+            var student9 = newStudentGenerator.GenerateStudent();
+            var student10 = newStudentGenerator.GenerateStudent();
 
-            new Student
-            {
-               FirstName = "Hannah",
-               LastName = "Longfellow",
-               StudentID = 2,
-               Major = "Music"
-            },
-            new Student
-            {
-              FirstName = "Susan",
-              LastName = "Tacken",
-              StudentID = 3,
-              Major = "Music"
-           },
-           new Student
-           {
-               FirstName = "Mike",
-               LastName = "Jackson",
-               StudentID = 4,
-               Major = "Math"
-           },
-           new Student
-           {
-               FirstName = "Angie",
-               LastName = "Capps",
-               StudentID = 5,
-               Major = "Physics"
-           },
-           new Student
-           {
-              FirstName = "Kim",
-              LastName = "Manor",
-              StudentID = 6,
-              Major = "Chemistry"
-           },
-           new Student
-          {
-              FirstName = "Kate",
-              LastName = "Brewer",
-              StudentID = 7,
-              Major = "Physics"
-          },
-          new Student
-          {
-             FirstName = "John",
-             LastName = "David",
-             StudentID = 8,
-             Major = "Art"
-          },
-          new Student
-          {
-             FirstName = "Matt",
-             LastName = "Cooper",
-             StudentID = 9,
-             Major = "Math"
-          },
-           new Student
-           {
-              FirstName = "Ken",
-              LastName = "Brown",
-              StudentID = 10,
-              Major = "Music"
-            }
-        );
-        context.SaveChanges();
+            context.Students.AddOrUpdate(x => x.StudentID, student1, student2, student3, student4, student5, student6, student7, student8, student9, student10);
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
