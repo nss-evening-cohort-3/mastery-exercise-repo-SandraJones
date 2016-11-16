@@ -38,15 +38,36 @@ namespace RepoQuiz.Migrations
             //      new Person { FullName = "Brice Lambson" },
             //      new Person { FullName = "Rowan Miller" }
             //    );
-            //
-
-                                  
+            //                         
             var student1 = newStudentGenerator.GenerateStudent();
             newListOfStudents.Add(student1);
 
             var student2 =  newStudentGenerator.GenerateStudent();
             newListOfStudents.Add(student2);
 
-            }
+            var student3 = newStudentGenerator.GenerateStudent();
+            newListOfStudents.Add(student3);
+
+            var student4 = newStudentGenerator.GenerateStudent();
+            newListOfStudents.Add(student4);
+
+            var student5 = newStudentGenerator.GenerateStudent();
+            newListOfStudents.Add(student5);
+
+            var student6 = newStudentGenerator.GenerateStudent();
+            newListOfStudents.Add(student6);
+
+            var student7 = newStudentGenerator.GenerateStudent();
+            newListOfStudents.Add(student7);
+
+            var student8 = newStudentGenerator.GenerateStudent();
+            newListOfStudents.Add(student8);
+
+            var student9 = newStudentGenerator.GenerateStudent();
+            newListOfStudents.Add(student9);
+
+            var student10 = newStudentGenerator.GenerateStudent();
+            newListOfStudents.Add(student10);
+        }
     }
 }
