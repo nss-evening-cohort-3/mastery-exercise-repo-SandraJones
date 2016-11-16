@@ -9,34 +9,43 @@ using RepoQuiz.Models;
 
 namespace RepoQuiz.DAL
 {
-    
+
     public class NameGenerator
     {
+        Random rnd = new Random();
         public Student GenerateStudent()
-        {
-            Random rnd = new Random();
-            string[] FirstNames = { "Tom", "Emma", "Kikki", "Jim",
+        {       
+                string[] FirstNames = { "Tom", "Emma", "Kikki", "Jim",
                             "Gino", "Samuel", "Suzy", "Karen",
                             "Sarah", "Anna" };
+                int indexFirstNames = rnd.Next(0, FirstNames.Length);
 
-            string[] LastNames = { "Anderson", "Pence", "Kaine", "Harris",
+                string[] LastNames = { "Anderson", "Pence", "Kaine", "Harris",
                                 "Pena", "Jones", "Smith", "Cook",
                                 "Davidson", "Tucker" };
+                int indexLastNames = rnd.Next(0, LastNames.Length);
 
-            string[] Majors = { "Latin", "Math", "Biology", "Pre-Law", "Chemistry", "Visual Art", "Music", "Civil Engineering", "Computer Science", "Nursing", "Pre-Med" };
+                string[] Majors = { "Latin", "Math", "Biology", "Pre-Law", "Chemistry", "Visual Art", "Music", "Civil Engineering", "Computer Science", "Nursing", "Pre-Med" };
+                int indexMajors = rnd.Next(0, Majors.Length);
 
-            string randomFirstName = FirstNames[rnd.Next(FirstNames.Length)];
-            string randomLastName = LastNames[rnd.Next(LastNames.Length)];
-            string randomMajors = Majors[rnd.Next(Majors.Length)];
+                string randomFirstName = FirstNames[rnd.Next(FirstNames.Length)];
+                string randomLastName = LastNames[rnd.Next(LastNames.Length)];
+                string randomMajors = Majors[rnd.Next(Majors.Length)];
 
-            Student newRandom = new Student
+                string FirstName = randomFirstName;
+                string LastName = randomLastName;
+                string Major = randomMajors;
+
+               
+            Student newRandom = new Student()
             {
                 FirstName = randomFirstName,
                 LastName = randomLastName,
                 Major = randomMajors
             };
-            return newRandom;//this returns a student type so when I use this in another class, it's a student being returned not a newRandom.
-        }
 
+            return newRandom;
+           
+        }
     }
 }

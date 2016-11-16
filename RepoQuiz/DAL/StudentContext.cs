@@ -9,6 +9,7 @@ namespace RepoQuiz.DAL
 {
     public class StudentContext : DbContext
     {
+        // 'virtual' keyword is needed to use Moq during testing
         public virtual DbSet<Student> Students { get; set; }
     }
 }
